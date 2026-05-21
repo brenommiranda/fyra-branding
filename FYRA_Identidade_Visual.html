@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FYRA — Identidade Visual</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --fyra-black:#080404;
+  --fyra-dark:#110606;
+  --fyra-red:#CC1520;
+  --fyra-red-deep:#8B0A12;
+  --fyra-red-bright:#E82030;
+  --fyra-pink:#D4305E;
+  --fyra-warm-gray:#EDEBE7;
+  --fyra-gray:#9A9590;
+  --fyra-white:#FFFFFF;
+  --fyra-off-white:#F7F5F2;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--fyra-black);color:var(--fyra-white);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(8,4,4,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(204,21,32,0.2);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px}
+.nav-logo img{height:32px;width:auto;display:block}
+.nav-links{display:flex;gap:28px}
+.nav-links a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--fyra-gray);text-decoration:none;transition:color .2s;font-weight:500}
+.nav-links a:hover{color:var(--fyra-white)}
+
+/* SECTIONS */
+section{min-height:100vh;padding:120px 80px 80px}
+.section-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--fyra-pink);margin-bottom:16px;font-weight:600}
+.section-title{font-family:'Bebas Neue',sans-serif;letter-spacing:2px;line-height:0.95}
+
+/* ========== HERO ========== */
+#hero{background:var(--fyra-black);display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding:0;min-height:100vh}
+.hero-bg{position:absolute;inset:0;background-image:url('./img/hero.png');background-size:cover;background-position:center top}
+.hero-grid{position:absolute;inset:0;background-image:radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);background-size:32px 32px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%)}
+.hero-content{position:relative;z-index:2;padding:0 80px;max-width:900px}
+.hero-eyebrow{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--fyra-pink);margin-bottom:32px;font-weight:600;display:flex;align-items:center;gap:16px}
+.hero-eyebrow::before{content:'';display:block;width:40px;height:1px;background:var(--fyra-pink)}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,12vw,160px);letter-spacing:2px;line-height:0.9;color:var(--fyra-white);margin-bottom:8px}
+.hero-subtitle{font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,12vw,160px);letter-spacing:2px;line-height:0.9;color:var(--fyra-red);margin-bottom:48px}
+.hero-desc{font-size:15px;font-weight:300;color:rgba(255,255,255,0.6);line-height:1.8;max-width:480px;margin-bottom:56px}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(204,21,32,0.4);padding:8px 20px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--fyra-gray);font-weight:500}
+
+
+/* ========== SOBRE A MARCA ========== */
+#sobre{background:var(--fyra-off-white);color:var(--fyra-black)}
+#sobre .section-label{color:var(--fyra-red)}
+#sobre .section-title{color:var(--fyra-black);font-size:clamp(60px,8vw,120px)}
+.sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:64px;align-items:start}
+.sobre-statement{font-size:22px;font-weight:700;line-height:1.4;color:var(--fyra-black);margin-bottom:24px}
+.sobre-text{font-size:15px;font-weight:300;line-height:1.9;color:rgba(8,4,4,0.65)}
+.pillar-list{display:flex;flex-direction:column;gap:1px}
+.pillar{display:flex;align-items:flex-start;gap:24px;padding:28px 0;border-top:1px solid rgba(8,4,4,0.12)}
+.pillar:last-child{border-bottom:1px solid rgba(8,4,4,0.12)}
+.pillar-num{font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--fyra-red);line-height:1;flex-shrink:0;width:56px}
+.pillar-content h4{font-size:13px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--fyra-black);margin-bottom:6px}
+.pillar-content p{font-size:13px;font-weight:300;color:rgba(8,4,4,0.6);line-height:1.7}
+
+/* ========== EXIBIÇÃO DA MARCA ========== */
+#exibicao{min-height:100vh;padding:0;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.exib-panel{flex:1;min-height:50vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.exib-panel-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.exib-panel-bg.photo1{
+  /* SUBSTITUA pelo caminho da sua foto: background-image:url('img/01.png'); */
+  background-image:url('img/01.png');
+  background-color:#5a1010;
+}
+.exib-panel-bg.photo2{
+  /* SUBSTITUA pelo caminho da sua foto: background-image:url('img/02.png'); */
+  background-image:url('img/02.png');
+  background-color:#1a0808;
+}
+.exib-overlay-red{position:absolute;inset:0;background:linear-gradient(135deg, rgba(180,10,20,0.82) 0%, rgba(100,5,10,0.72) 100%)}
+.exib-overlay-dark{position:absolute;inset:0;background:linear-gradient(135deg, rgba(8,4,4,0.88) 0%, rgba(50,5,10,0.78) 100%)}
+.exib-logo-wrap{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:16px}
+.exib-logo-wrap img{
+  /* Logo branca/negativa — SUBSTITUA pelo caminho: src="img/logo-negativo.png" */
+  height:72px;width:auto;filter:brightness(0) invert(1)
+}
+.exib-tagline{font-size:13px;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:400;margin-top:8px}
+.exib-label{position:absolute;bottom:24px;left:32px;z-index:3;font-size:10px;letter-spacing:3px;text-transform:uppercase;font-weight:500}
+.exib-panel:first-child .exib-label{color:rgba(255,255,255,0.45)}
+.exib-panel:last-child .exib-label{color:rgba(255,255,255,0.3)}
+
+/* ========== PALETA ========== */
+#paleta{background:var(--fyra-dark);position:relative;overflow:hidden;padding-bottom:0}
+#paleta .section-title{font-size:clamp(60px,8vw,120px)}
+.palette-mizi{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:64px}
+.pal-cell{padding:56px 48px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between}
+.pal-name{font-size:18px;font-weight:700;margin-bottom:20px;letter-spacing:-0.3px}
+.pal-data{display:flex;flex-direction:column;gap:5px}
+.pal-data span{font-size:13px;font-weight:300;line-height:1.5}
+.pal-data strong{font-weight:600}
+.pal-pantone{font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500;margin-top:16px;opacity:0.6}
+.palette-prop{background:#0A0303;padding:48px 48px 40px;margin-top:2px}
+.prop-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:20px;font-weight:500}
+.prop-bar-wrap{display:flex;gap:2px;height:10px;margin-bottom:12px}
+.prop-bar-seg{height:10px}
+.prop-legend{display:flex;gap:32px;margin-top:16px;flex-wrap:wrap}
+.prop-leg-item{display:flex;align-items:center;gap:10px;font-size:12px;color:rgba(255,255,255,0.45);font-weight:400}
+.prop-leg-dot{width:10px;height:10px;flex-shrink:0}
+
+/* ========== NOSSA FOTOGRAFIA ========== */
+#fotografia{background:var(--fyra-black);padding-bottom:80px}
+#fotografia .section-label{color:var(--fyra-pink)}
+#fotografia .section-title{font-size:clamp(60px,8vw,120px)}
+.foto-intro{font-size:15px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.9;max-width:640px;margin-top:24px;margin-bottom:64px}
+.foto-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px}
+.foto-card{position:relative;overflow:hidden;min-height:420px;display:flex;flex-direction:column;justify-content:flex-end}
+.foto-card-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+/* SUBSTITUA os backgrounds pelas suas fotos da pasta */
+.foto-card-bg.f1{background-image:url('img/01.png');background-color:#3a1a0a}
+.foto-card-bg.f2{background-image:url('img/02.png');background-color:#0a1a3a}
+.foto-card-bg.f3{background-image:url('img/03.png');background-color:#1a0a1a}
+.foto-card-overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(8,4,4,0.92) 0%, rgba(8,4,4,0.1) 55%, transparent 100%)}
+.foto-card-content{position:relative;z-index:2;padding:28px}
+.foto-card-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--fyra-pink);font-weight:600;margin-bottom:8px}
+.foto-card-title{font-size:16px;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.3}
+.foto-card-desc{font-size:12px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.7}
+.foto-rules{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:2px}
+.foto-rule{padding:32px 40px;background:#110606}
+.foto-rule-icon{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:16px}
+.foto-rule-icon.do{background:rgba(204,21,32,0.15)}
+.foto-rule-icon.dont{background:rgba(212,48,94,0.1)}
+.foto-rule h4{font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+.foto-rule.do h4{color:var(--fyra-red)}
+.foto-rule.dont h4{color:var(--fyra-pink)}
+.foto-rule p{font-size:13px;font-weight:300;color:rgba(255,255,255,0.45);line-height:1.7}
+
+/* ========== TIPOGRAFIA ========== */
+#tipografia{background:var(--fyra-off-white);color:var(--fyra-black)}
+#tipografia .section-label{color:var(--fyra-red)}
+#tipografia .section-title{color:var(--fyra-black);font-size:clamp(60px,8vw,120px)}
+.type-showcase{margin-top:64px;display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.type-panel{padding:48px;background:var(--fyra-white)}
+.type-panel.dark{background:var(--fyra-black);color:var(--fyra-white)}
+.type-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--fyra-gray);margin-bottom:24px;font-weight:500}
+
+/* ========== LOGO ========== */
+#logo{background:var(--fyra-black);position:relative;overflow:hidden}
+#logo .section-title{font-size:clamp(60px,8vw,120px)}
+.logo-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:64px}
+.logo-panel{padding:64px;display:flex;flex-direction:column;justify-content:space-between;min-height:360px}
+.logo-panel.on-dark{background:#110606}
+.logo-panel.on-light{background:var(--fyra-off-white)}
+.logo-panel.on-red{background:var(--fyra-red)}
+.logo-panel.on-white{background:#FFFFFF}
+.logo-panel-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:40px}
+.logo-panel.on-dark .logo-panel-label,.logo-panel.on-red .logo-panel-label{color:rgba(255,255,255,0.4)}
+.logo-panel.on-light .logo-panel-label,.logo-panel.on-white .logo-panel-label{color:rgba(8,4,4,0.4)}
+.logo-center{display:flex;justify-content:center;align-items:center;flex:1;padding:20px 0}
+.logo-center img{max-height:72px;width:auto;max-width:80%}
+/* Versões logo por fundo */
+.logo-panel.on-red .logo-center img{filter:brightness(0) invert(1)}
+.clearspace-note{font-size:11px;letter-spacing:1px;margin-top:24px;font-weight:400}
+.logo-panel.on-dark .clearspace-note{color:rgba(255,255,255,0.3)}
+.logo-panel.on-light .clearspace-note,.logo-panel.on-white .clearspace-note{color:rgba(8,4,4,0.3)}
+.logo-panel.on-red .clearspace-note{color:rgba(255,255,255,0.5)}
+.dont-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:2px}
+.dont-panel{background:#1A0808;padding:40px;text-align:center}
+.dont-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:24px;font-weight:400}
+.dont-tag{display:inline-block;font-size:10px;letter-spacing:2px;text-transform:uppercase;background:rgba(212,48,94,0.12);color:var(--fyra-pink);padding:3px 10px;border:1px solid rgba(212,48,94,0.3);margin-top:8px;font-weight:500}
+
+/* ========== VOZ ========== */
+#voz{background:var(--fyra-off-white);color:var(--fyra-black)}
+#voz .section-label{color:var(--fyra-red)}
+#voz .section-title{color:var(--fyra-black);font-size:clamp(60px,8vw,120px)}
+.voice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:64px}
+.voice-card{padding:48px;background:var(--fyra-white)}
+.voice-card.accent{background:var(--fyra-red);color:var(--fyra-white)}
+.voice-card.dark{background:var(--fyra-black);color:var(--fyra-white)}
+.voice-trait{font-family:'Bebas Neue',sans-serif;font-size:52px;letter-spacing:1px;line-height:1;margin-bottom:20px}
+.voice-card .voice-trait{color:var(--fyra-red)}
+.voice-card.accent .voice-trait,.voice-card.dark .voice-trait{color:var(--fyra-white)}
+.voice-desc{font-size:14px;font-weight:300;line-height:1.9;color:rgba(8,4,4,0.6);margin-bottom:28px}
+.voice-card.accent .voice-desc,.voice-card.dark .voice-desc{color:rgba(255,255,255,0.6)}
+.voice-ex-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--fyra-gray);margin-bottom:8px;font-weight:500}
+.voice-card.accent .voice-ex-label,.voice-card.dark .voice-ex-label{color:rgba(255,255,255,0.35)}
+.voice-example{font-size:13px;font-style:italic;font-weight:300;line-height:1.8;color:rgba(8,4,4,0.5);border-left:2px solid var(--fyra-red);padding-left:16px}
+.voice-card.accent .voice-example{color:rgba(255,255,255,0.7);border-left-color:rgba(255,255,255,0.3)}
+.voice-card.dark .voice-example{color:rgba(255,255,255,0.5);border-left-color:var(--fyra-pink)}
+.dd-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:2px}
+.dd-col{background:var(--fyra-white);padding:32px}
+.dd-col.dont-col{background:#FFF0F2}
+.dd-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:20px;display:inline-flex;align-items:center;gap:8px}
+.dd-tag.do{color:#1A7A40}
+.dd-tag.dont{color:var(--fyra-pink)}
+.dd-item{font-size:13px;font-weight:300;line-height:1.7;color:rgba(8,4,4,0.65);padding:10px 0;border-bottom:1px solid rgba(8,4,4,0.06);display:flex;align-items:flex-start;gap:12px}
+.dd-item:last-child{border-bottom:none}
+.dd-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:7px}
+.dd-dot.do{background:#1A7A40}
+.dd-dot.dont{background:var(--fyra-pink)}
+
+/* ========== ELEMENTOS ========== */
+#elementos{background:var(--fyra-dark)}
+#elementos .section-title{font-size:clamp(60px,8vw,120px)}
+.elem-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin-top:64px}
+.elem-card{padding:48px;background:#110606;min-height:320px;display:flex;flex-direction:column;justify-content:space-between}
+.elem-card.wide{grid-column:span 2}
+.elem-title{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--fyra-pink);margin-bottom:24px;font-weight:600}
+.elem-visual{flex:1;display:flex;align-items:center;justify-content:center}
+.elem-desc{font-size:13px;font-weight:300;color:rgba(255,255,255,0.4);line-height:1.7;margin-top:24px}
+.dot-pattern{background-image:radial-gradient(circle,rgba(255,255,255,0.12) 1px,transparent 1px);background-size:20px 20px;width:100%;height:120px}
+.gradient-block{width:100%;height:120px;background:linear-gradient(135deg,var(--fyra-red-deep) 0%,var(--fyra-red) 40%,var(--fyra-pink) 100%)}
+.geo-single{width:36px;height:72px;background:linear-gradient(160deg,var(--fyra-red-bright),var(--fyra-pink));transform:skewX(-16deg)}
+
+/* ========== REDES SOCIAIS ========== */
+#social{background:var(--fyra-off-white);color:var(--fyra-black);padding-bottom:0}
+#social .section-label{color:var(--fyra-red)}
+#social .section-title{color:var(--fyra-black);font-size:clamp(60px,8vw,120px)}
+.social-intro{font-size:15px;font-weight:300;color:rgba(8,4,4,0.55);line-height:1.9;max-width:600px;margin-top:24px;margin-bottom:64px}
+.social-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.social-card{background:#fff;display:flex;flex-direction:column}
+.social-mockup{position:relative;aspect-ratio:3/4;overflow:hidden;background:#1a0808}
+.social-mockup img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  /* SUBSTITUA por: src="img/img/instagram01.png" */
+}
+/* Overlay FYRA sobre o post */
+.social-mockup-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,4,4,0.7) 0%,transparent 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:16px}
+.social-mockup-logo{margin-bottom:8px}
+.social-mockup-logo img{height:20px;width:auto;filter:brightness(0) invert(1);opacity:0.9}
+.social-mockup-caption{font-size:11px;font-weight:300;color:rgba(255,255,255,0.6);line-height:1.5}
+.social-card-body{padding:24px}
+.social-format{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--fyra-red);font-weight:700;margin-bottom:8px}
+.social-format-name{font-size:17px;font-weight:700;color:var(--fyra-black);margin-bottom:12px;line-height:1.3}
+.social-specs{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.social-spec{font-size:12px;font-weight:300;color:rgba(8,4,4,0.55);display:flex;gap:8px;align-items:flex-start;line-height:1.5}
+.social-spec::before{content:'—';color:var(--fyra-red);flex-shrink:0;font-weight:600}
+.social-rules{background:#F7F5F2;padding:20px 24px;margin-top:auto}
+.social-rules-title{font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:rgba(8,4,4,0.4);margin-bottom:10px}
+.social-rule-item{font-size:12px;font-weight:400;color:rgba(8,4,4,0.6);padding:5px 0;border-bottom:1px solid rgba(8,4,4,0.06);line-height:1.5}
+.social-rule-item:last-child{border-bottom:none}
+.social-guidelines{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:2px;background:var(--fyra-black)}
+.social-guide{padding:40px;background:#0D0404}
+.social-guide-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--fyra-pink);font-weight:600;margin-bottom:16px}
+.social-guide h4{font-size:16px;font-weight:700;color:#fff;margin-bottom:12px}
+.social-guide p{font-size:13px;font-weight:300;color:rgba(255,255,255,0.45);line-height:1.8}
+
+/* Carrossel interativo */
+.carousel-mockup{background:#1a0808}
+.carousel-slides{position:absolute;inset:0;z-index:1}
+.carousel-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity .45s ease}
+.carousel-slide.active{opacity:1}
+
+.carousel-mockup .social-mockup-overlay{z-index:2}
+.carousel-dots{position:absolute;top:14px;right:14px;display:flex;gap:6px;z-index:3}
+.carousel-dot{width:7px;height:7px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.4);transition:background .2s,transform .2s}
+.carousel-dot.active{background:#fff;transform:scale(1.2)}
+.carousel-dot:hover{background:rgba(255,255,255,0.85)}
+.carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);background:rgba(8,4,4,0.55);color:#fff;font-size:22px;line-height:1;cursor:pointer;z-index:3;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;font-family:'Poppins',sans-serif;padding:0 0 3px 0;backdrop-filter:blur(4px)}
+.carousel-arrow:hover{background:rgba(204,21,32,0.85);border-color:rgba(255,255,255,0.35)}
+.carousel-arrow-prev{left:12px}
+.carousel-arrow-next{right:12px}
+
+/* FOOTER */
+footer{background:var(--fyra-black);border-top:1px solid rgba(204,21,32,0.15);padding:48px 80px;display:flex;justify-content:space-between;align-items:center}
+.footer-logo img{height:28px;width:auto;opacity:0.5;filter:brightness(0) invert(1)}
+/* SUBSTITUA: src="img/logo-negativo.png" */
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.25);letter-spacing:1px;font-weight:300}
+.footer-version{font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:2px;font-weight:300}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <!-- SUBSTITUA o src pelo caminho da sua logo branca: src="img/logo-negativo.png" -->
+    <img src="img/logo-negativo.png" alt="FYRA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <span style="display:none;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;color:#fff">FYRA</span>
+  </div>
+  <div class="nav-links">
+    <a href="#sobre">Marca</a>
+    <a href="#exibicao">Exibição</a>
+    <a href="#paleta">Paleta</a>
+    <a href="#fotografia">Fotografia</a>
+    <a href="#tipografia">Tipografia</a>
+    <a href="#logo">Logo</a>
+    <a href="#voz">Voz</a>
+    <a href="#elementos">Elementos</a>
+    <a href="#social">Redes Sociais</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Identidade Visual</div>
+    <div class="hero-title">Manual de</div>
+    <div class="hero-subtitle">Marca FYRA.</div>
+    <p class="hero-desc">Sistema visual completo para construção de autoridade executiva. Versão 1.0 — Outubro 2025.</p>
+    <span class="hero-tag">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="rgba(204,21,32,0.6)" stroke-width="1"/><circle cx="7" cy="7" r="2" fill="#CC1520"/></svg>
+      Uso interno
+    </span>
+  </div>
+  
+</section>
+
+<!-- SOBRE A MARCA -->
+<section id="sobre">
+  <div class="section-label">01 — Fundação</div>
+  <div class="section-title" style="font-size:clamp(60px,8vw,120px);color:#080404">Sobre a<br>Marca.</div>
+  <div class="sobre-grid">
+    <div>
+      <p class="sobre-statement">FYRA existe para transformar executivos em autoridades reconhecidas — antes, durante e depois do topo.</p>
+      <p class="sobre-text">A identidade da FYRA combina urgência e prestígio. É uma marca que fala com quem já conquistou muito — e quer garantir que seu legado continue gerando valor. Vermelha como ação. Sólida como experiência. Direta como resultados.</p>
+    </div>
+    <div class="pillar-list">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div class="pillar-content">
+          <h4>Autoridade</h4>
+          <p>A marca deve sempre transmitir credibilidade, peso e liderança de mercado.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div class="pillar-content">
+          <h4>Urgência</h4>
+          <p>Cada elemento visual comunica que o momento de agir é agora.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div class="pillar-content">
+          <h4>Resultado</h4>
+          <p>Design limpo e direto, sem ornamentos desnecessários. Cada escolha tem propósito.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">04</div>
+        <div class="pillar-content">
+          <h4>Expansão</h4>
+          <p>O sistema visual cresce com o executivo — adaptável a palcos, mídias e formatos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXIBIÇÃO DA MARCA -->
+<section id="exibicao" style="padding:0;min-height:100vh">
+  <!-- PAINEL 1: fundo vermelho/foto + logo negativa -->
+  <div class="exib-panel">
+    <div class="exib-panel-bg photo1"></div>
+    <div class="exib-overlay-red"></div>
+    <div class="exib-logo-wrap">
+      <!-- SUBSTITUA src="img/logo-negativo.png" pela sua logo -->
+      <img src="img/logo-negativo.png" alt="FYRA"
+        onerror="this.outerHTML='<div style=\'font-family:Bebas Neue,sans-serif;font-size:80px;letter-spacing:4px;color:#fff;opacity:0.9\'>FYRA</div>'">
+      <div class="exib-tagline">Autoridade Executiva</div>
+    </div>
+    <div class="exib-label" style="color:rgba(255,255,255,0.45)">Versão negativa — fundo vermelho</div>
+  </div>
+  <!-- PAINEL 2: fundo escuro/foto + logo negativa -->
+  <div class="exib-panel">
+    <div class="exib-panel-bg photo2"></div>
+    <div class="exib-overlay-dark"></div>
+    <div class="exib-logo-wrap">
+      <img src="img/logo-negativo.png" alt="FYRA"
+        onerror="this.outerHTML='<div style=\'font-family:Bebas Neue,sans-serif;font-size:80px;letter-spacing:4px;color:#fff;opacity:0.9\'>FYRA</div>'">
+      <div class="exib-tagline">Personal Branding</div>
+    </div>
+    <div class="exib-label" style="color:rgba(255,255,255,0.3)">Versão negativa — fundo escuro</div>
+  </div>
+</section>
+
+<!-- PALETA CROMÁTICA -->
+<section id="paleta" style="min-height:auto">
+  <div class="section-label">02 — Cores</div>
+  <div class="section-title" style="font-size:clamp(60px,8vw,120px)">Paleta<br>Cromática.</div>
+
+  <div class="palette-mizi">
+    <!-- Crimson -->
+    <div class="pal-cell" style="background:#CC1520;color:#fff">
+      <div>
+        <div class="pal-name">FYRA Crimson</div>
+        <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;opacity:0.55;margin-bottom:20px;font-weight:500">Cor Principal</div>
+      </div>
+      <div class="pal-data" style="color:rgba(255,255,255,0.75)">
+        <span><strong>HEX:</strong> #CC1520</span>
+        <span><strong>CMYK:</strong> 0, 90, 85, 20</span>
+        <span><strong>RGB:</strong> 204, 21, 32</span>
+        <div class="pal-pantone">PANTONE® 485 C</div>
+      </div>
+    </div>
+    <!-- Black -->
+    <div class="pal-cell" style="background:#080404;color:#fff;border:1px solid rgba(255,255,255,0.04)">
+      <div>
+        <div class="pal-name">FYRA Black</div>
+        <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;opacity:0.4;margin-bottom:20px;font-weight:500">Fundo Principal</div>
+      </div>
+      <div class="pal-data" style="color:rgba(255,255,255,0.5)">
+        <span><strong>HEX:</strong> #080404</span>
+        <span><strong>CMYK:</strong> 50, 50, 50, 100</span>
+        <span><strong>RGB:</strong> 8, 4, 4</span>
+        <div class="pal-pantone">PANTONE® Black 6 C</div>
+      </div>
+    </div>
+    <!-- Deep Red -->
+    <div class="pal-cell" style="background:#8B0A12;color:#fff">
+      <div>
+        <div class="pal-name">Deep Red</div>
+        <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;opacity:0.5;margin-bottom:20px;font-weight:500">Profundidade</div>
+      </div>
+      <div class="pal-data" style="color:rgba(255,255,255,0.65)">
+        <span><strong>HEX:</strong> #8B0A12</span>
+        <span><strong>CMYK:</strong> 0, 93, 87, 45</span>
+        <span><strong>RGB:</strong> 139, 10, 18</span>
+        <div class="pal-pantone">PANTONE® 7621 C</div>
+      </div>
+    </div>
+    <!-- Magenta -->
+    <div class="pal-cell" style="background:#D4305E;color:#fff">
+      <div>
+        <div class="pal-name">Magenta</div>
+        <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;opacity:0.55;margin-bottom:20px;font-weight:500">Acento</div>
+      </div>
+      <div class="pal-data" style="color:rgba(255,255,255,0.75)">
+        <span><strong>HEX:</strong> #D4305E</span>
+        <span><strong>CMYK:</strong> 0, 77, 30, 17</span>
+        <span><strong>RGB:</strong> 212, 48, 94</span>
+        <div class="pal-pantone">PANTONE® 206 C</div>
+      </div>
+    </div>
+    <!-- Warm White -->
+    <div class="pal-cell" style="background:#EDEBE7;color:#080404">
+      <div>
+        <div class="pal-name" style="color:#080404">Warm White</div>
+        <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(8,4,4,0.4);margin-bottom:20px;font-weight:500">Contraste Claro</div>
+      </div>
+      <div class="pal-data" style="color:rgba(8,4,4,0.55)">
+        <span><strong>HEX:</strong> #EDEBE7</span>
+        <span><strong>CMYK:</strong> 2, 2, 4, 7</span>
+        <span><strong>RGB:</strong> 237, 235, 231</span>
+        <div class="pal-pantone" style="color:rgba(8,4,4,0.35)">PANTONE® 9184 C</div>
+      </div>
+    </div>
+    <!-- Bright Red -->
+    <div class="pal-cell" style="background:#E82030;color:#fff">
+      <div>
+        <div class="pal-name">Bright Red</div>
+        <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;opacity:0.5;margin-bottom:20px;font-weight:500">Destaque e CTAs</div>
+      </div>
+      <div class="pal-data" style="color:rgba(255,255,255,0.7)">
+        <span><strong>HEX:</strong> #E82030</span>
+        <span><strong>CMYK:</strong> 0, 86, 79, 9</span>
+        <span><strong>RGB:</strong> 232, 32, 48</span>
+        <div class="pal-pantone">PANTONE® 2035 C</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barra de proporção -->
+  <div class="palette-prop">
+    <div class="prop-label">Proporção de uso recomendada</div>
+    <div class="prop-bar-wrap">
+      <div class="prop-bar-seg" style="flex:40;background:#080404"></div>
+      <div class="prop-bar-seg" style="flex:30;background:#CC1520"></div>
+      <div class="prop-bar-seg" style="flex:15;background:#EDEBE7"></div>
+      <div class="prop-bar-seg" style="flex:10;background:#D4305E"></div>
+      <div class="prop-bar-seg" style="flex:5;background:#E82030"></div>
+    </div>
+    <div class="prop-legend">
+      <div class="prop-leg-item"><div class="prop-leg-dot" style="background:#080404"></div>40% Black</div>
+      <div class="prop-leg-item"><div class="prop-leg-dot" style="background:#CC1520"></div>30% Crimson</div>
+      <div class="prop-leg-item"><div class="prop-leg-dot" style="background:#EDEBE7"></div>15% Warm White</div>
+      <div class="prop-leg-item"><div class="prop-leg-dot" style="background:#D4305E"></div>10% Magenta</div>
+      <div class="prop-leg-item"><div class="prop-leg-dot" style="background:#E82030"></div>5% Bright Red</div>
+    </div>
+  </div>
+</section>
+
+<!-- NOSSA FOTOGRAFIA -->
+<section id="fotografia" style="min-height:auto">
+  <div class="section-label">03 — Fotografia</div>
+  <div class="section-title" style="font-size:clamp(60px,8vw,120px)">Nossa<br>Fotografia.</div>
+  <p class="foto-intro">A fotografia FYRA comunica presença, autoridade e movimento. Sempre com tratamento cromático da marca — nunca fotos neutras sem contexto executivo.</p>
+
+  <div class="foto-grid">
+    <!-- Foto 1 -->
+    <div class="foto-card">
+      <div class="foto-card-bg f1"></div>
+      <!-- SUBSTITUA: background-image:url('img/01.png') na classe .foto-card-bg.f1 no CSS -->
+      <div class="foto-card-overlay"></div>
+      <div class="foto-card-content">
+        <div class="foto-card-tag">Estilo 01</div>
+        <div class="foto-card-title">Executivo em Ação</div>
+        <div class="foto-card-desc">Ambientes corporativos reais. Profundidade de campo. Paleta quente, tom sério.</div>
+      </div>
+    </div>
+    <!-- Foto 2 -->
+    <div class="foto-card">
+      <div class="foto-card-bg f2"></div>
+      <!-- SUBSTITUA: background-image:url('img/02.png') na classe .foto-card-bg.f2 no CSS -->
+      <div class="foto-card-overlay"></div>
+      <div class="foto-card-content">
+        <div class="foto-card-tag">Estilo 02</div>
+        <div class="foto-card-title">Palco e Presença</div>
+        <div class="foto-card-desc">Luz de palco, microfone, audiências. Momento de autoridade e entrega.</div>
+      </div>
+    </div>
+    <!-- Foto 3 -->
+    <div class="foto-card">
+      <div class="foto-card-bg f3"></div>
+      <!-- SUBSTITUA: background-image:url('img/03.png') na classe .foto-card-bg.f3 no CSS -->
+      <div class="foto-card-overlay"></div>
+      <div class="foto-card-content">
+        <div class="foto-card-tag">Estilo 03</div>
+        <div class="foto-card-title">Conexão e Contexto</div>
+        <div class="foto-card-desc">1:1 com executivos, olhar direto. Luz natural com profundidade escura.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Regras de fotografia -->
+  <div class="foto-rules">
+    <div class="foto-rule do">
+      <div class="foto-rule-icon do" style="color:var(--fyra-red)">✓</div>
+      <h4>Utilize</h4>
+      <p>Fotos com sujeito definido e intenção clara. Luz direcional ou de palco. Ambientes corporativos, eventos e bastidores. Tratamento com overlay vermelho ou escuro da marca. Expressões de concentração, liderança e autoridade.</p>
+    </div>
+    <div class="foto-rule dont">
+      <div class="foto-rule-icon dont" style="color:var(--fyra-pink)">✗</div>
+      <h4>Evite</h4>
+      <p>Fotos genéricas de banco de imagem sem contexto executivo. Imagens super-iluminadas ou com paleta fria sem tratamento. Sorriso forçado ou cenário doméstico. Fotos sem a sobreposição cromática da marca. Foco desfocado no sujeito principal.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIPOGRAFIA -->
+<section id="tipografia" style="min-height:auto">
+  <div class="section-label">04 — Tipografia</div>
+  <div class="section-title" style="font-size:clamp(60px,8vw,120px);color:#080404">Sistema<br>Tipográfico.</div>
+  <div class="type-showcase">
+    <div class="type-panel">
+      <div class="type-label">Display / Títulos</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:80px;line-height:0.9;letter-spacing:1px;color:#CC1520;margin-bottom:16px">BEBAS<br>NEUE</div>
+      <div style="font-size:13px;color:rgba(8,4,4,0.45);letter-spacing:0.5px;line-height:1.9;margin-top:16px;font-weight:300">
+        Uso: Títulos, headings de seção, números grandes, chamadas fortes<br>
+        Tamanhos: 48 / 72 / 96 / 120px<br>
+        Letter-spacing: 1–4px<br>
+        Estilo: Regular (única variação)
+      </div>
+    </div>
+    <div class="type-panel dark">
+      <div class="type-label" style="color:rgba(255,255,255,0.3)">Body / Interface</div>
+      <div style="margin-bottom:16px">
+        <div style="font-size:38px;font-weight:300;color:#fff;line-height:1.1;margin-bottom:4px">Poppins</div>
+        <div style="font-size:38px;font-weight:700;color:#fff;line-height:1.1">Sans Serif</div>
+      </div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.35);letter-spacing:0.5px;line-height:1.9;margin-top:16px;font-weight:300">
+        Uso: Corpo, legendas, labels, UI, apresentações<br>
+        Pesos: 300 Light / 400 Regular / 500 Medium<br>
+        600 SemiBold / 700 Bold / 900 Black<br>
+        Tamanhos: 12 / 14 / 15 / 18px
+      </div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:2px">
+    <div style="background:#fff;padding:48px">
+      <div class="type-label" style="margin-bottom:32px">Hierarquia — Fundo Claro</div>
+      <div style="display:flex;flex-direction:column;gap:0">
+        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(8,4,4,0.07)">
+          <span style="font-size:11px;color:rgba(8,4,4,0.35);letter-spacing:1px;min-width:60px;flex-shrink:0;font-family:'Poppins',sans-serif">96px</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:44px;color:#CC1520">H1 Display</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(8,4,4,0.07)">
+          <span style="font-size:11px;color:rgba(8,4,4,0.35);letter-spacing:1px;min-width:60px;flex-shrink:0;font-family:'Poppins',sans-serif">72px</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:#080404">H2 Seção</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(8,4,4,0.07)">
+          <span style="font-size:11px;color:rgba(8,4,4,0.35);letter-spacing:1px;min-width:60px;flex-shrink:0;font-family:'Poppins',sans-serif">48px</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:#080404">H3 Sub-seção</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(8,4,4,0.07)">
+          <span style="font-size:11px;color:rgba(8,4,4,0.35);letter-spacing:1px;min-width:60px;flex-shrink:0;font-family:'Poppins',sans-serif">15px</span>
+          <span style="font-size:15px;font-weight:300;color:rgba(8,4,4,0.65);font-family:'Poppins',sans-serif">Corpo — Texto corrido e descrições</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0">
+          <span style="font-size:11px;color:rgba(8,4,4,0.35);letter-spacing:1px;min-width:60px;flex-shrink:0;font-family:'Poppins',sans-serif">11px</span>
+          <span style="font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;color:#CC1520;font-family:'Poppins',sans-serif">LABEL — CAIXA ALTA</span>
+        </div>
+      </div>
+    </div>
+    <div style="background:#080404;padding:48px">
+      <div class="type-label" style="color:rgba(255,255,255,0.3);margin-bottom:32px">Hierarquia — Fundo Escuro</div>
+      <div style="display:flex;flex-direction:column;gap:0">
+        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06)">
+          <span style="font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:1px;min-width:60px;flex-shrink:0;font-family:'Poppins',sans-serif">96px</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:44px;color:#E82030">H1 Display</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06)">
+          <span style="font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:1px;min-width:60px;flex-shrink:0;font-family:'Poppins',sans-serif">72px</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:#fff">H2 Seção</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06)">
+          <span style="font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:1px;min-width:60px;flex-shrink:0;font-family:'Poppins',sans-serif">48px</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:rgba(255,255,255,0.85)">H3 Sub-seção</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06)">
+          <span style="font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:1px;min-width:60px;flex-shrink:0;font-family:'Poppins',sans-serif">15px</span>
+          <span style="font-size:15px;font-weight:300;color:rgba(255,255,255,0.45);font-family:'Poppins',sans-serif">Corpo — Texto corrido e descrições</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0">
+          <span style="font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:1px;min-width:60px;flex-shrink:0;font-family:'Poppins',sans-serif">11px</span>
+          <span style="font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;color:#D4305E;font-family:'Poppins',sans-serif">LABEL — CAIXA ALTA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pesos Poppins -->
+  <div style="background:#fff;padding:48px;margin-top:2px">
+    <div class="type-label" style="margin-bottom:32px">Poppins — Variações de peso</div>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:2px">
+      <div style="text-align:center;padding:24px 16px;background:#F7F5F2">
+        <div style="font-size:28px;font-weight:300;color:#080404;font-family:'Poppins',sans-serif;margin-bottom:8px">Aa</div>
+        <div style="font-size:11px;color:rgba(8,4,4,0.4);letter-spacing:1px;font-family:'Poppins',sans-serif">300 Light</div>
+      </div>
+      <div style="text-align:center;padding:24px 16px;background:#F7F5F2">
+        <div style="font-size:28px;font-weight:400;color:#080404;font-family:'Poppins',sans-serif;margin-bottom:8px">Aa</div>
+        <div style="font-size:11px;color:rgba(8,4,4,0.4);letter-spacing:1px;font-family:'Poppins',sans-serif">400 Regular</div>
+      </div>
+      <div style="text-align:center;padding:24px 16px;background:#F7F5F2">
+        <div style="font-size:28px;font-weight:500;color:#080404;font-family:'Poppins',sans-serif;margin-bottom:8px">Aa</div>
+        <div style="font-size:11px;color:rgba(8,4,4,0.4);letter-spacing:1px;font-family:'Poppins',sans-serif">500 Medium</div>
+      </div>
+      <div style="text-align:center;padding:24px 16px;background:#F7F5F2">
+        <div style="font-size:28px;font-weight:600;color:#080404;font-family:'Poppins',sans-serif;margin-bottom:8px">Aa</div>
+        <div style="font-size:11px;color:rgba(8,4,4,0.4);letter-spacing:1px;font-family:'Poppins',sans-serif">600 SemiBold</div>
+      </div>
+      <div style="text-align:center;padding:24px 16px;background:#F0EEEA">
+        <div style="font-size:28px;font-weight:700;color:#CC1520;font-family:'Poppins',sans-serif;margin-bottom:8px">Aa</div>
+        <div style="font-size:11px;color:rgba(8,4,4,0.4);letter-spacing:1px;font-family:'Poppins',sans-serif">700 Bold</div>
+      </div>
+      <div style="text-align:center;padding:24px 16px;background:#F0EEEA">
+        <div style="font-size:28px;font-weight:900;color:#CC1520;font-family:'Poppins',sans-serif;margin-bottom:8px">Aa</div>
+        <div style="font-size:11px;color:rgba(8,4,4,0.4);letter-spacing:1px;font-family:'Poppins',sans-serif">900 Black</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SISTEMA DE LOGO -->
+<section id="logo" style="min-height:auto">
+  <div class="section-label">05 — Logo</div>
+  <div class="section-title" style="font-size:clamp(60px,8vw,120px)">Sistema<br>de Logo.</div>
+  <div class="logo-grid">
+    <div class="logo-panel on-dark">
+      <div class="logo-panel-label">Versão Principal — Fundo Escuro</div>
+      <div class="logo-center">
+        <!-- SUBSTITUA src="img/logo-negativo.png" -->
+        <img src="img/logo-negativo.png" alt="FYRA logo branca"
+          onerror="this.outerHTML='<div style=\'font-family:Bebas Neue,sans-serif;font-size:52px;letter-spacing:4px;color:#fff\'>FYRA</div>'">
+      </div>
+      <div class="clearspace-note">✓ Uso recomendado — máxima legibilidade</div>
+    </div>
+    <div class="logo-panel on-light">
+      <div class="logo-panel-label">Versão — Fundo Claro</div>
+      <div class="logo-center">
+        <!-- SUBSTITUA src="img/hor_black.png" -->
+        <img src="img/hor_black.png" alt="FYRA logo escura"
+          onerror="this.outerHTML='<div style=\'font-family:Bebas Neue,sans-serif;font-size:52px;letter-spacing:4px;color:#080404\'>FYRA</div>'">
+      </div>
+      <div class="clearspace-note">✓ Versão para fundos claros e off-white</div>
+    </div>
+    <div class="logo-panel on-red">
+      <div class="logo-panel-label">Versão — Fundo Vermelho</div>
+      <div class="logo-center">
+        <!-- Versão branca sobre vermelho — filter CSS inverte automaticamente -->
+        <img src="img/logo-negativo.png" alt="FYRA logo branca"
+          onerror="this.outerHTML='<div style=\'font-family:Bebas Neue,sans-serif;font-size:52px;letter-spacing:4px;color:#fff\'>FYRA</div>'">
+      </div>
+      <div class="clearspace-note">✓ Monochrome branca — fundo vermelho</div>
+    </div>
+    <div class="logo-panel on-white">
+      <div class="logo-panel-label">Versão — Fundo Branco</div>
+      <div class="logo-center">
+        <!-- SUBSTITUA src="img/hor_black.png" -->
+        <img src="img/hor_black.png" alt="FYRA logo escura"
+          onerror="this.outerHTML='<div style=\'font-family:Bebas Neue,sans-serif;font-size:52px;letter-spacing:4px;color:#080404\'>FYRA</div>'">
+      </div>
+      <div class="clearspace-note">✓ Alta definição sobre branco puro</div>
+    </div>
+  </div>
+  <!-- Don'ts -->
+  <div class="dont-grid">
+    <div class="dont-panel">
+      <div style="opacity:0.35;filter:grayscale(1)">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;letter-spacing:3px;color:#888">FYRA</div>
+      </div>
+      <div class="dont-label">Não usar em cinza ou dessaturado</div>
+      <div class="dont-tag">✗ Proibido</div>
+    </div>
+    <div class="dont-panel">
+      <div style="background:linear-gradient(135deg,#4040FF,#00FFCC);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-family:'Bebas Neue',sans-serif;font-size:40px;letter-spacing:3px">FYRA</div>
+      <div class="dont-label">Não alterar as cores da marca</div>
+      <div class="dont-tag">✗ Proibido</div>
+    </div>
+    <div class="dont-panel">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;letter-spacing:3px;color:#fff;transform:scale(0.7,1.4);display:inline-block">FYRA</div>
+      <div class="dont-label">Não distorcer ou redimensionar</div>
+      <div class="dont-tag">✗ Proibido</div>
+    </div>
+  </div>
+</section>
+
+<!-- VOZ DA MARCA -->
+<section id="voz" style="min-height:auto">
+  <div class="section-label">06 — Tom e Voz</div>
+  <div class="section-title" style="color:#080404;font-size:clamp(60px,8vw,120px)">Voz da<br>Marca.</div>
+  <div class="voice-grid">
+    <div class="voice-card">
+      <div class="voice-trait">Direta</div>
+      <p class="voice-desc">A FYRA não enrola. Cada palavra carrega peso e propósito. Sem jargão vazio, sem promessas genéricas.</p>
+      <div class="voice-ex-label">Exemplo</div>
+      <div class="voice-example">"Você chegou ao topo. Mas o mercado não para de mudar. Construa agora a autoridade que garante o próximo capítulo."</div>
+    </div>
+    <div class="voice-card accent">
+      <div class="voice-trait">Desafiadora</div>
+      <p class="voice-desc">A FYRA questiona o status quo dos executivos. Provoca a reflexão antes de oferecer a solução.</p>
+      <div class="voice-ex-label">Exemplo</div>
+      <div class="voice-example">"Quanto tempo dura a relevância de quem parou de aparecer?"</div>
+    </div>
+    <div class="voice-card dark">
+      <div class="voice-trait">Estratégica</div>
+      <p class="voice-desc">Toda comunicação conecta ação imediata com resultado de longo prazo. Visão executiva, linguagem de resultado.</p>
+      <div class="voice-ex-label">Exemplo</div>
+      <div class="voice-example">"Visibilidade hoje. Oportunidades contínuas amanhã. É assim que se constrói um ecossistema de autoridade."</div>
+    </div>
+    <div class="voice-card" style="background:#EDEBE7">
+      <div class="voice-trait">Humana</div>
+      <p class="voice-desc">Apesar da força, a marca reconhece a vulnerabilidade da transição. Fala de igual para igual.</p>
+      <div class="voice-ex-label">Exemplo</div>
+      <div class="voice-example">"A vida executiva é recompensadora — mas também exaustiva. Você não precisa passar pela próxima transição sem um plano."</div>
+    </div>
+  </div>
+  <div class="dd-grid" style="margin-top:2px">
+    <div class="dd-col">
+      <div class="dd-tag do">✓ Use</div>
+      <div class="dd-item"><div class="dd-dot do"></div>Linguagem ativa e imperativa</div>
+      <div class="dd-item"><div class="dd-dot do"></div>Dados e resultados concretos</div>
+      <div class="dd-item"><div class="dd-dot do"></div>Perguntas que provocam reflexão</div>
+      <div class="dd-item"><div class="dd-dot do"></div>Frases curtas e impactantes</div>
+      <div class="dd-item"><div class="dd-dot do"></div>Reconhecer a experiência do executivo</div>
+    </div>
+    <div class="dd-col dont-col">
+      <div class="dd-tag dont">✗ Evite</div>
+      <div class="dd-item"><div class="dd-dot dont"></div>Jargões vazios sem entrega concreta</div>
+      <div class="dd-item"><div class="dd-dot dont"></div>Tom condescendente ou didático</div>
+      <div class="dd-item"><div class="dd-dot dont"></div>Promessas sem âncora em resultado</div>
+      <div class="dd-item"><div class="dd-dot dont"></div>Linguagem corporativa genérica</div>
+      <div class="dd-item"><div class="dd-dot dont"></div>Excesso de adjetivos sem substantivo</div>
+    </div>
+  </div>
+</section>
+
+<!-- ELEMENTOS GRÁFICOS -->
+<section id="elementos" style="min-height:auto">
+  <div class="section-label">07 — Elementos</div>
+  <div class="section-title" style="font-size:clamp(60px,8vw,120px)">Elementos<br>Gráficos.</div>
+  <div class="elem-grid" style="grid-template-columns:1fr 1fr 1fr">
+    <div class="elem-card">
+      <div class="elem-title">Grid de Pontos</div>
+      <div class="elem-visual"><div class="dot-pattern"></div></div>
+      <p class="elem-desc">Textura base de todas as composições. Cria profundidade sem competir com o conteúdo. Opacidade: 5–12%.</p>
+    </div>
+    <div class="elem-card">
+      <div class="elem-title">Gradiente Cromático</div>
+      <div class="elem-visual"><div class="gradient-block"></div></div>
+      <p class="elem-desc">Do Deep Red ao Magenta. Usado em overlays de imagem, backgrounds de seção e elementos decorativos.</p>
+    </div>
+    <div class="elem-card">
+      <div class="elem-title">Forma Geométrica</div>
+      <div class="elem-visual">
+        <div class="geo-single"></div>
+      </div>
+      <p class="elem-desc">Paralelogramo derivado do símbolo FYRA. Elemento decorativo único — nunca agrupado ou repetido sem intenção.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REDES SOCIAIS -->
+<section id="social" style="min-height:auto">
+  <div class="section-label">08 — Redes Sociais</div>
+  <div class="section-title" style="color:#080404;font-size:clamp(60px,8vw,120px)">Redes<br>Sociais.</div>
+  <p class="social-intro">A presença digital da FYRA segue o mesmo rigor visual da marca. Cada formato tem diretrizes específicas para manter a identidade em qualquer contexto.</p>
+
+  <div class="social-grid">
+    <!-- Post 1: Feed Estático -->
+    <div class="social-card">
+      <div class="social-mockup">
+        <!-- SUBSTITUA src="img/instagram01.png" pelo caminho da sua imagem -->
+        <img src="img/ig01.png" alt="Exemplo Feed FYRA"
+          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#8B0A12,#CC1520)'">
+        <div class="social-mockup-overlay">
+          <div class="social-mockup-logo">
+            <img src="img/logo-negativo.png" alt="FYRA"
+              onerror="this.outerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:18px;letter-spacing:3px;color:#fff\'>FYRA</span>'">
+          </div>
+          <div class="social-mockup-caption">Construa sua autoridade antes de precisar dela.</div>
+        </div>
+      </div>
+      <div class="social-card-body">
+        <div class="social-format">Formato 01</div>
+        <div class="social-format-name">Post de Feed<br>Estático</div>
+        <div class="social-specs">
+          <div class="social-spec">Formato 1:1 (1080 × 1440px)</div>
+          <div class="social-spec">Imagem + overlay gradiente FYRA</div>
+          <div class="social-spec">Logo no canto inferior esquerdo</div>
+          <div class="social-spec">Tipografia: Bebas Neue para headline</div>
+        </div>
+      </div>
+      <div class="social-rules">
+        <div class="social-rules-title">Diretrizes</div>
+        <div class="social-rule-item">Sempre com overlay da marca (40–70%)</div>
+        <div class="social-rule-item">Máx. 1 headline em Bebas Neue</div>
+        <div class="social-rule-item">Logo visível mas não dominante</div>
+        <div class="social-rule-item">Legenda com CTA claro e direto</div>
+      </div>
+    </div>
+
+    <!-- Post 2: Carrossel -->
+    <div class="social-card">
+      <div class="social-mockup carousel-mockup" id="fyra-carousel">
+        <div class="carousel-slides">
+          <div class="carousel-slide active" style="background-image:url('img/carr/01.png')"></div>
+          <div class="carousel-slide" style="background-image:url('img/carr/02.png')"></div>
+          <div class="carousel-slide" style="background-image:url('img/carr/03.png')"></div>
+        </div>
+        <div class="social-mockup-overlay">
+          <div class="social-mockup-logo">
+            <img src="img/logo-negativo.png" alt="FYRA"
+              onerror="this.outerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:18px;letter-spacing:3px;color:#fff\'>FYRA</span>'">
+          </div>
+          <div class="social-mockup-caption">Os 4 pilares da autoridade executiva →</div>
+        </div>
+        <!-- Indicador de carrossel -->
+        <div class="carousel-dots">
+          <button class="carousel-dot active" data-slide="0" aria-label="Slide 1"></button>
+          <button class="carousel-dot" data-slide="1" aria-label="Slide 2"></button>
+          <button class="carousel-dot" data-slide="2" aria-label="Slide 3"></button>
+        </div>
+        <!-- Setas de navegação -->
+        <button class="carousel-arrow carousel-arrow-prev" aria-label="Slide anterior">‹</button>
+        <button class="carousel-arrow carousel-arrow-next" aria-label="Próximo slide">›</button>
+      </div>
+      <div class="social-card-body">
+        <div class="social-format">Formato 02</div>
+        <div class="social-format-name">Carrossel<br>de Conteúdo</div>
+        <div class="social-specs">
+          <div class="social-spec">Formato 1:1 (1080 × 1440px)</div>
+          <div class="social-spec">Capa: foto + overlay / demais: fundo escuro</div>
+          <div class="social-spec">Numeração de slides visível</div>
+          <div class="social-spec">Último slide: logo + CTA</div>
+        </div>
+      </div>
+      <div class="social-rules">
+        <div class="social-rules-title">Diretrizes</div>
+        <div class="social-rule-item">Capa sempre com foto + overlay FYRA</div>
+        <div class="social-rule-item">Slides internos: fundo escuro (#080404)</div>
+        <div class="social-rule-item">Máx. 8 slides por carrossel</div>
+        <div class="social-rule-item">Lógica: problema → insight → solução</div>
+      </div>
+    </div>
+
+    <!-- Post 3: Stories -->
+    <div class="social-card">
+      <div class="social-mockup" style="aspect-ratio:3/4;">
+        <img src="img/ig02.png" alt="Exemplo Stories FYRA" style="aspect-ratio:auto;object-position:top"
+          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(180deg,#8B0A12,#080404)'">
+        <div class="social-mockup-overlay" style="background:linear-gradient(to top,rgba(8,4,4,0.6) 0%,transparent 40%)">
+          <div class="social-mockup-logo">
+            <img src="img/logo-negativo.png" alt="FYRA"
+              onerror="this.outerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:18px;letter-spacing:3px;color:#fff\'>FYRA</span>'">
+          </div>
+          <div class="social-mockup-caption">Deslize para saber mais ↑</div>
+        </div>
+        <!-- Barra de stories -->
+        <div style="position:absolute;top:8px;left:8px;right:8px;display:flex;gap:3px">
+          <div style="flex:1;height:2px;background:#fff;border-radius:1px"></div>
+          <div style="flex:1;height:2px;background:rgba(255,255,255,0.3);border-radius:1px"></div>
+          <div style="flex:1;height:2px;background:rgba(255,255,255,0.3);border-radius:1px"></div>
+        </div>
+      </div>
+      <div class="social-card-body">
+        <div class="social-format">Formato 03</div>
+        <div class="social-format-name">Stories<br>Vertical</div>
+        <div class="social-specs">
+          <div class="social-spec">Formato 9:16 (1080 × 1920px)</div>
+          <div class="social-spec">Zona segura: 250px topo e base</div>
+          <div class="social-spec">CTA de link sempre no rodapé</div>
+          <div class="social-spec">Duração recomendada: 5–7s</div>
+        </div>
+      </div>
+      <div class="social-rules">
+        <div class="social-rules-title">Diretrizes</div>
+        <div class="social-rule-item">Mensagem única e objetiva por story</div>
+        <div class="social-rule-item">Headline em Bebas Neue centralizado</div>
+        <div class="social-rule-item">Fundo: foto escura ou sólido #CC1520</div>
+        <div class="social-rule-item">Evitar texto em cima da barra de stories</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Guidelines gerais -->
+  <div class="social-guidelines">
+    <div class="social-guide">
+      <div class="social-guide-label">Consistência Visual</div>
+      <h4>Padrões obrigatórios em todo conteúdo</h4>
+      <p>Toda peça publicada deve conter a logo FYRA, seguir a paleta cromática e utilizar exclusivamente Bebas Neue e Poppins. Fotos sem overlay da marca não são permitidas em nenhum formato. O grid de pontos pode ser aplicado como elemento de fundo em peças editoriais.</p>
+    </div>
+    <div class="social-guide">
+      <div class="social-guide-label">Tom nas Redes</div>
+      <h4>Como a FYRA se comunica digitalmente</h4>
+      <p>Posts curtos, diretos e provocativos. Perguntas retóricas performam melhor do que afirmações. Resultados concretos (números, cases, depoimentos) sempre que disponíveis. Evitar hashtags genéricas — usar apenas as próprias da marca. Frequência: mínimo 3x por semana no feed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <!-- SUBSTITUA src="img/logo-negativo.png" -->
+    <img src="img/logo-negativo.png" alt="FYRA"
+      onerror="this.outerHTML='<span style=\'font-family:Bebas Neue,sans-serif;font-size:18px;letter-spacing:3px;color:rgba(255,255,255,0.3)\'>FYRA</span>'">
+  </div>
+  <div class="footer-copy">Manual de Identidade Visual — Versão 1.0 — Uso Interno</div>
+  <div class="footer-version">Maio 2026</div>
+</footer>
+
+<script>
+(function(){
+  var carousel = document.getElementById('fyra-carousel');
+  if(!carousel) return;
+  var slides = carousel.querySelectorAll('.carousel-slide');
+  var dots = carousel.querySelectorAll('.carousel-dot');
+  var current = 0;
+  function show(i){
+    current = (i + slides.length) % slides.length;
+    slides.forEach(function(s,idx){ s.classList.toggle('active', idx===current); });
+    dots.forEach(function(d,idx){ d.classList.toggle('active', idx===current); });
+  }
+  dots.forEach(function(d,idx){ d.addEventListener('click', function(){ show(idx); }); });
+  carousel.querySelector('.carousel-arrow-prev').addEventListener('click', function(){ show(current-1); });
+  carousel.querySelector('.carousel-arrow-next').addEventListener('click', function(){ show(current+1); });
+})();
+</script>
+</body>
+</html>
