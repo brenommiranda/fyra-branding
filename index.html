@@ -19,7 +19,7 @@
   --fyra-white:#FFFFFF;
   --fyra-off-white:#F7F5F2;
 }
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 body{font-family:'Poppins',sans-serif;background:var(--fyra-black);color:var(--fyra-white);overflow-x:hidden}
 
 /* NAV */
@@ -293,7 +293,7 @@ footer{background:var(--fyra-black);border-top:1px solid rgba(204,21,32,0.15);pa
   .nav-hamburger{display:block}
   section{padding:80px 24px 60px}
   .sobre-grid,.type-showcase,.logo-grid,.voice-grid,.dd-grid,.palette-mizi,.foto-rules,.social-guidelines{grid-template-columns:1fr}
-  .elem-grid,.foto-grid,.social-grid,.dont-grid{grid-template-columns:1fr}
+  .elem-grid,.foto-grid,.social-grid,.dont-grid{grid-template-columns:1fr !important}
   .hero-content{padding:100px 24px 0}
   .cta-bar{grid-template-columns:1fr;text-align:center}
   footer{flex-direction:column;gap:16px;text-align:center;padding:40px 24px}
@@ -302,6 +302,17 @@ footer{background:var(--fyra-black);border-top:1px solid rgba(204,21,32,0.15);pa
   .pal-cell{padding:40px 24px}
   .logo-panel{padding:40px 24px}
   .exib-panel{min-height:40vh}
+  /* Tipografia — hierarquia */
+  .th-panel{overflow:hidden}
+  .th-item{overflow:hidden;flex-wrap:wrap}
+  .th-display{font-size:clamp(24px,6vw,44px) !important}
+  /* Elementos gráficos */
+  .elem-card{overflow:hidden;width:100%}
+  /* Cards de redes sociais (Instagram, LinkedIn, YouTube) */
+  .social-profiles-grid{grid-template-columns:1fr}
+  .social-profile-card{width:100%;overflow:hidden}
+  /* Prevenção geral de overflow */
+  img,svg,div{max-width:100%}
 }
 
 /* ========== RESPONSIVE: TABLET (769px–1024px) ========== */
@@ -628,51 +639,51 @@ footer{background:var(--fyra-black);border-top:1px solid rgba(204,21,32,0.15);pa
     </div>
   </div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:2px">
-    <div style="background:#fff;padding:48px">
+    <div class="th-panel" style="background:#fff;padding:48px">
       <div class="type-label" style="margin-bottom:32px">Hierarquia — Fundo Claro</div>
       <div style="display:flex;flex-direction:column;gap:0">
-        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(8,4,4,0.07)">
+        <div class="th-item" style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(8,4,4,0.07)">
           <span style="font-size:11px;color:rgba(8,4,4,0.35);letter-spacing:1px;min-width:60px;flex-shrink:0;font-family:'Poppins',sans-serif">96px</span>
-          <span style="font-family:'Bebas Neue',sans-serif;font-size:44px;color:#CC1520">H1 Display</span>
+          <span class="th-display" style="font-family:'Bebas Neue',sans-serif;font-size:44px;color:#CC1520">H1 Display</span>
         </div>
-        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(8,4,4,0.07)">
+        <div class="th-item" style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(8,4,4,0.07)">
           <span style="font-size:11px;color:rgba(8,4,4,0.35);letter-spacing:1px;min-width:60px;flex-shrink:0;font-family:'Poppins',sans-serif">72px</span>
-          <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:#080404">H2 Seção</span>
+          <span class="th-display" style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:#080404">H2 Seção</span>
         </div>
-        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(8,4,4,0.07)">
+        <div class="th-item" style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(8,4,4,0.07)">
           <span style="font-size:11px;color:rgba(8,4,4,0.35);letter-spacing:1px;min-width:60px;flex-shrink:0;font-family:'Poppins',sans-serif">48px</span>
-          <span style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:#080404">H3 Sub-seção</span>
+          <span class="th-display" style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:#080404">H3 Sub-seção</span>
         </div>
-        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(8,4,4,0.07)">
+        <div class="th-item" style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(8,4,4,0.07)">
           <span style="font-size:11px;color:rgba(8,4,4,0.35);letter-spacing:1px;min-width:60px;flex-shrink:0;font-family:'Poppins',sans-serif">15px</span>
           <span style="font-size:15px;font-weight:300;color:rgba(8,4,4,0.65);font-family:'Poppins',sans-serif">Corpo — Texto corrido e descrições</span>
         </div>
-        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0">
+        <div class="th-item" style="display:flex;align-items:baseline;gap:24px;padding:18px 0">
           <span style="font-size:11px;color:rgba(8,4,4,0.35);letter-spacing:1px;min-width:60px;flex-shrink:0;font-family:'Poppins',sans-serif">11px</span>
           <span style="font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;color:#CC1520;font-family:'Poppins',sans-serif">LABEL — CAIXA ALTA</span>
         </div>
       </div>
     </div>
-    <div style="background:#080404;padding:48px">
+    <div class="th-panel" style="background:#080404;padding:48px">
       <div class="type-label" style="color:rgba(255,255,255,0.3);margin-bottom:32px">Hierarquia — Fundo Escuro</div>
       <div style="display:flex;flex-direction:column;gap:0">
-        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06)">
+        <div class="th-item" style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06)">
           <span style="font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:1px;min-width:60px;flex-shrink:0;font-family:'Poppins',sans-serif">96px</span>
-          <span style="font-family:'Bebas Neue',sans-serif;font-size:44px;color:#E82030">H1 Display</span>
+          <span class="th-display" style="font-family:'Bebas Neue',sans-serif;font-size:44px;color:#E82030">H1 Display</span>
         </div>
-        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06)">
+        <div class="th-item" style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06)">
           <span style="font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:1px;min-width:60px;flex-shrink:0;font-family:'Poppins',sans-serif">72px</span>
-          <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:#fff">H2 Seção</span>
+          <span class="th-display" style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:#fff">H2 Seção</span>
         </div>
-        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06)">
+        <div class="th-item" style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06)">
           <span style="font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:1px;min-width:60px;flex-shrink:0;font-family:'Poppins',sans-serif">48px</span>
-          <span style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:rgba(255,255,255,0.85)">H3 Sub-seção</span>
+          <span class="th-display" style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:rgba(255,255,255,0.85)">H3 Sub-seção</span>
         </div>
-        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06)">
+        <div class="th-item" style="display:flex;align-items:baseline;gap:24px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06)">
           <span style="font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:1px;min-width:60px;flex-shrink:0;font-family:'Poppins',sans-serif">15px</span>
           <span style="font-size:15px;font-weight:300;color:rgba(255,255,255,0.45);font-family:'Poppins',sans-serif">Corpo — Texto corrido e descrições</span>
         </div>
-        <div style="display:flex;align-items:baseline;gap:24px;padding:18px 0">
+        <div class="th-item" style="display:flex;align-items:baseline;gap:24px;padding:18px 0">
           <span style="font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:1px;min-width:60px;flex-shrink:0;font-family:'Poppins',sans-serif">11px</span>
           <span style="font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;color:#D4305E;font-family:'Poppins',sans-serif">LABEL — CAIXA ALTA</span>
         </div>
