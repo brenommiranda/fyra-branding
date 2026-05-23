@@ -313,6 +313,10 @@ footer{background:var(--fyra-black);border-top:1px solid rgba(204,21,32,0.15);pa
   .social-profile-card{width:100%;overflow:hidden}
   /* Prevenção geral de overflow */
   img,svg,div{max-width:100%}
+  /* Seção tipografia — empilhar verticalmente e conter overflow */
+  #tipografia,#tipografia > *{overflow-x:hidden}
+  .th-hierarchy{grid-template-columns:1fr !important}
+  .poppins-weights{grid-template-columns:repeat(3,1fr) !important}
 }
 
 /* ========== RESPONSIVE: TABLET (769px–1024px) ========== */
@@ -638,7 +642,7 @@ footer{background:var(--fyra-black);border-top:1px solid rgba(204,21,32,0.15);pa
       </div>
     </div>
   </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:2px">
+  <div class="th-hierarchy" style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:2px">
     <div class="th-panel" style="background:#fff;padding:48px">
       <div class="type-label" style="margin-bottom:32px">Hierarquia — Fundo Claro</div>
       <div style="display:flex;flex-direction:column;gap:0">
@@ -694,7 +698,7 @@ footer{background:var(--fyra-black);border-top:1px solid rgba(204,21,32,0.15);pa
   <!-- Pesos Poppins -->
   <div style="background:#fff;padding:48px;margin-top:2px">
     <div class="type-label" style="margin-bottom:32px">Poppins — Variações de peso</div>
-    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:2px">
+    <div class="poppins-weights" style="display:grid;grid-template-columns:repeat(6,1fr);gap:2px">
       <div style="text-align:center;padding:24px 16px;background:#F7F5F2">
         <div style="font-size:28px;font-weight:300;color:#080404;font-family:'Poppins',sans-serif;margin-bottom:8px">Aa</div>
         <div style="font-size:11px;color:rgba(8,4,4,0.4);letter-spacing:1px;font-family:'Poppins',sans-serif">300 Light</div>
